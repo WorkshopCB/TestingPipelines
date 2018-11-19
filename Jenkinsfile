@@ -6,14 +6,19 @@ pipeline {
         MyVar = 'David'
       }
       steps {
+        container('maven3'){
         echo 'This is the first stage'
         sh '''echo ${MyVar}
 '''
+          sh 'mv --version'
+        }
       }
     }
     stage('JDK') {
       steps {
+        container('jdk8'){
         sh 'java -version'
+        }
       }
     }
   }
