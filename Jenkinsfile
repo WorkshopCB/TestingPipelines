@@ -10,7 +10,7 @@ pipeline {
         echo 'This is the first stage'
         sh '''echo ${MyVar}
 '''
-          sh 'mv --version'
+          sh 'mvn --version'
         }
       }
     }
